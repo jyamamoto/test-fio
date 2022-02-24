@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fio-tester-pv
+spec:
+  containers:
+  - name: fio-tester
+    image: quay.io/openshift-scale/scale-ci-fio
+    volumeMounts:
+      - mountPath: /mnt/test
+        name: test-unity-nfs-nlsas-vol
+  volumes:
+    - name: test-unity-nfs-nlsas-vol
+      persistentVolumeClaim:
+        claimName: test-unity-nfs-nlsas
