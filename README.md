@@ -34,6 +34,8 @@ spec:
 
 ~~~
 oc rsh {POD NAME}
+cd /var/tmp
+mkdir test-data
 ~~~
 
 ## Paso 3 - Ejecutar los siguientes comandos de pruebas
@@ -61,7 +63,7 @@ fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --nam
 fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=write_bw --filename=/var/tmp/fiotest --bs=128K --iodepth=64 --size=10G --readwrite=randwrite --time_based --ramp_time=2s --runtime=300s
 ~~~
 
-### Testing Write Sequential Speed... <--- OJO, que este sobre carga lindo
+### Testing Write Sequential Speed... <--- OJO, que este sobrecarga lindo
 ~~~
 fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=write_seq --filename=/var/tmp/fiotest --bs=1M --iodepth=16 --size=10G --readwrite=write --time_based --ramp_time=2s --runtime=300s --thread --numjobs=4 --offset_increment=500M
 ~~~
