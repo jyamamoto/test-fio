@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fio-tester-kkdp
+spec:
+  containers:
+  - name: fio-tester-kkdp
+    image: quay.io/openshift-scale/scale-ci-fio
