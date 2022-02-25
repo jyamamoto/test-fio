@@ -24,10 +24,6 @@ spec:
   containers:
   - name: fio-tester-kkdp2
     image: quay.io/openshift-scale/scale-ci-fio
-
-  taints:
-    - key: node-role.kubernetes.io/master
-      effect: NoSchedule
 ~~~
 
 ## Paso 2 - Conectarse al POD 
