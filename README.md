@@ -1,4 +1,4 @@
-# Como probar stresar el storage del etcd 
+# Como stresar el storage del etcd 
 
 ## Paso 1 - Hay que levantar un POD en un nodo master con una imagen que tenga fio
 
@@ -28,8 +28,13 @@ spec:
 
 ## Paso 2 - Conectarse al POD 
 
+Conectarse al POD generado vía rsh
 ~~~
 oc rsh {POD NAME}
+~~~
+
+Cambiarse al directorio /var/tmp y generar un dir de pruebas
+~~~
 cd /var/tmp
 mkdir test-data
 ~~~
